@@ -2,7 +2,7 @@
 
 > **English**: A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends in the [AI Collaboration Framework](https://github.com/redamancy231-create/ai-collaboration-framework) project. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples. **CC BY 4.0**.
 
-**语言**：简体中文（核心文档） / English abstract available（英文摘要，核心文档和 prompt 模板为中文）  
+**语言**：简体中文（原文） · [English](en/README.md) · [正體中文](zh-Hant/README.md)  
 **来源**：提炼自 [AI协作项目全生命周期框架](https://github.com/redamancy231-create/ai-collaboration-framework) §9.2 + 50+ 轮实战审查  
 **成熟度**：SOP 核心流程在源项目中经多后端验证；本工具包自身的提取/改编过程见下方验证状态
 
