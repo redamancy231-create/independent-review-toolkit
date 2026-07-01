@@ -150,6 +150,15 @@ independent-review-toolkit/
 
 ---
 
+## 相关项目
+
+| 项目 | 关系 |
+|------|------|
+| [**AI协作项目全生命周期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **上游来源**——本工具包的 SOP 提炼自框架 §9.2 + 50+ 轮实战审查 |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同级工具**——两个案例实验均使用本工具包的独立审查 SOP 完成 17+ 轮异后端审查闭合 |
+
+---
+
 ## 许可与引用
 
 CC BY 4.0。引用请注明版本号。
