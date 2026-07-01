@@ -12,7 +12,7 @@ PATTERNS=(
     '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
 )
 
-ALLOWLIST=('CC BY 4.0' 'noreply@anthropic.com' 'acerolaorion' 'LICENSE' 'PUBLISHING.md')
+ALLOWLIST=('CC BY 4.0' 'noreply@anthropic.com' 'acerolaorion' 'LICENSE' 'PUBLISHING.md' '.githooks/pre-push')
 FOUND=0
 
 while read local_ref local_sha remote_ref remote_sha; do
