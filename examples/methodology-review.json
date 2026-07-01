@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "title": "审查案例：方法论实验报告审查",
+    "version": "2.0.1",
+    "date": "2026-07-01",
+    "model": "DeepSeek-V4-Pro (via Claude Code CLI)",
+    "sop_version": "v2.0.0",
+    "note": "教学重构示例（pedagogical reconstruction），非逐字审查转录。见 .md 文件版本绑定。"
+  },
+  "source_material": {
+    "title": "AI协作项目全生命周期框架 §6.3.2 Flow-as-Node 嵌套工作流对照实验",
+    "author_backend": "DeepSeek-V4-Pro",
+    "type": "methodology",
+    "version_binding": {
+      "version_id": "dcac073",
+      "binding_method": "git-commit",
+      "verified_at": "2026-06-22T00:00:00+08:00",
+      "repo": "github.com/redamancy231-create/ai-collaboration-framework"
+    }
+  },
+  "step1_fact_extraction": {
+    "declarations": [
+      {"text": "n=20/臂，GPT-5.5 temp=0", "confidence": "VERIFIED", "type": "FACT", "verification_source": "prompt-tdd 项目实验配置文件"},
+      {"text": "Δ median F1 = 0.000", "confidence": "CONSISTENT", "type": "FACT", "verification_source": null},
+      {"text": "3/5 类别天花板效应", "confidence": "CONSISTENT", "type": "INFERENCE", "verification_source": null},
+      {"text": "Tier 0 负证据", "confidence": "CONSISTENT", "type": "INFERENCE", "verification_source": null},
+      {"text": "ceiling-limited 定性", "confidence": "PLAUSIBLE", "type": "VALUE", "verification_source": null}
+    ]
+  },
+  "step2_scoring": {
+    "scores": {
+      "D1_logic": {"score": 4, "anchor": "A/B臂定义清晰，对照逻辑正确；结论推理跳跃未充分桥接"},
+      "D2_accuracy": {"score": 4, "anchor": "统计报告与实验配置一致；temp=0和n=4事实准确但方法学后果未充分讨论"},
+      "D3_method": {"score": 4, "anchor": "对照实验是适当方法；F1单一指标可能对结构性差异不敏感"},
+      "D4_completeness": {"score": 3, "anchor": "4项缺失：temp=0可推广性/逐类样本分布/信息量等价假设/precision-recall拆分"},
+      "D5_clarity": {"score": 4, "anchor": "结构清晰，[E-]证据标注使用恰当，术语定义明确"},
+      "D6_insight": {"score": 4, "anchor": "阴性结果诚实报告在提示工程文献中稀缺，具有方法论价值"}
+    },
+    "composite_score": 3.8,
+    "na_dimensions": []
+  },
+  "step3_adversarial_challenge": {
+    "challenges": {
+      "A_alternative_explanations": "[MAJOR] 天花板效应可能源自F1粗粒度而非真无差异；建议补precision/recall拆分",
+      "B_hidden_assumptions": "[MAJOR] 隐含信息量等价假设——层级化vs扁平描述的信息量可能不等价",
+      "C_boundary_conditions": "[MODERATE] 推广边界不清晰——GPT-5.5中文编码任务内，是否适用其他模型/语言/temp>0？",
+      "D_counterexamples": "[MINOR] CoT格式效应阳性报告是否构成反例？建议区分内容格式vs推理格式",
+      "E_method_alternatives": "[MODERATE] F1单一指标——Exact Match或人类评估作为替代指标是否一致？"
+    },
+    "post_challenge_score_adjustments": [
+      {"dimension": "D4_completeness", "from": 3, "to": 3, "reason": "挑战(A)(B)(E)进一步确认缺失项，但不改变评分级别"},
+      {"dimension": "D3_method", "from": 4, "to": 4, "reason": "挑战(E)指出单一指标局限，但不否定方法本身"}
+    ]
+  },
+  "step4_final_judgment": {
+    "verdict": "MINOR",
+    "composite_score": 3.8,
+    "independence_declaration": {
+      "reviewer_backend": "GPT-5.5 (via Codex CLI)",
+      "author_backend": "DeepSeek-V4-Pro",
+      "axis1_different_backend": true,
+      "axis2_context_isolated": true,
+      "independence_level": "IND",
+      "degradation_notes": "审查者无法执行原始评分脚本验证F1值（标记TOOL-LIMITED）",
+      "session_id": "A1-FlowAsNode-review-round-3",
+      "timestamp": "2026-06-21T23:30:00+08:00"
+    },
+    "key_challenges_summary": [
+      "(B) 信息量等价假设——最需要补充的方法学讨论",
+      "(A) F1粗粒度假说——建议补充precision/recall拆分",
+      "(C) 推广边界——需更清晰的限制声明"
+    ],
+    "rationale": "材料在实验设计、方法选择、表达质量和诚实报告方面合格。4项完整性改进空间均不改变核心结论方向（ΔF1=0.000）。Minor而非Major——核心发现可信，改进是增强性的。"
+  },
+  "post_hoc_audit": {
+    "audit_items": {
+      "A1_backend": true,
+      "A2_isolation": true,
+      "A3_score_before_challenge": true,
+      "A4_challenge_no_softening": true,
+      "A5_provenance_complete": true,
+      "A6_declaration_embedded": true,
+      "A7_adjustment_documented": true,
+      "A8_na_reasoned": true,
+      "A9_version_binding": true
+    },
+    "audit_conclusion": "PASS",
+    "auditor": "DeepSeek-V4-Pro (教学示例自审——实际审查须异后端执行)"
+  }
+}

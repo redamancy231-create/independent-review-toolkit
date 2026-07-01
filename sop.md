@@ -177,7 +177,7 @@
 
 ### 7.2 评分约束
 
-- **D2 例外**：先验证事实和结论可靠性，再评推理质量
+- **评推理不评结论（D2 例外）**：D1/D3-D6 评「推理如何到达结论」，不评「结论对不对」。**D2（事实准确性）例外**：先验证事实断言和结论可靠性，再评推理质量。D2 的核心是事实是否正确——这与结论可靠性直接相关，不适用"不评结论"约束。
 - **N/A 允许**：某维度不适用时标记 N/A 并说明理由
 - **锚定说明**：每项评分附一句话解释
 - **不知为不知**：缺乏领域知识时标记 `[OUT-OF-DOMAIN]`
@@ -205,6 +205,17 @@
 1. **魔鬼代言人不得软化**：每个挑战以最尖锐形式提出，禁止附加缓和语
 2. **具体而非抽象**：指向材料中的具体段落/声明/推理步骤
 3. **挑战后评分调整**：完成 (A)-(E) 后重新审视步骤二评分
+
+### 8.3 挑战后评分调整规则
+
+```
+IF 挑战发现了步骤二未注意到的问题：
+  → 下调相关维度评分，记录「从 X 调整为 Y，原因：挑战 (Z) 揭示…」
+IF 挑战未发现新问题（材料经受住挑战）：
+  → 维持原评分，记录「经受住 (A)-(E) 挑战，评分不变」
+IF 挑战发现了致命问题：
+  → 触发红旗 R1-R3（见 §11），可能直接建议「弃用」
+```
 
 ---
 
@@ -308,11 +319,92 @@ independence_declaration:
 
 ## §13 输出格式
 
-每次独立审查产出两份文件：
-1. **`.md` 文件**（人读）：完整审查报告
-2. **`.json` 文件**（机读）：结构化数据，字段与 md 一一对应
+### 13.1 双件规范
 
-详细 JSON schema 见步骤四输出规范（§9.2）。
+每次独立审查产出两份文件：
+1. **`.md` 文件**（人读）：完整审查报告，包含所有步骤、评分、挑战、终判、审计结论
+2. **`.json` 文件**（机读）：结构化数据，字段与 md 章节一一对应
+
+### 13.2 JSON 结构规范
+
+```json
+{
+  "metadata": {
+    "title": "独立审查报告",
+    "version": "1.0",
+    "date": "YYYY-MM-DD",
+    "model": "<审查者后端模型名>",
+    "sop_version": "v2.0.0"
+  },
+  "trigger": {
+    "type": "T1|T2|T3|T4|S1|S2|S3",
+    "description": "..."
+  },
+  "source_material": {
+    "title": "...",
+    "author_backend": "<作者模型名称>",
+    "type": "methodology|analysis|conclusion|other",
+    "version_binding": {
+      "version_id": "git commit hash / 文件 hash / 版本号",
+      "binding_method": "git-commit | file-hash | version-number",
+      "verified_at": "ISO 8601 timestamp"
+    }
+  },
+  "step1_fact_extraction": {
+    "declarations": [
+      {
+        "text": "...",
+        "confidence": "VERIFIED|CONSISTENT|PLAUSIBLE|UNVERIFIABLE",
+        "type": "FACT|INFERENCE|ASSUMPTION|VALUE",
+        "verification_source": "<VERIFIED 须附来源 URL/路径/工具名>"
+      }
+    ]
+  },
+  "step2_scoring": {
+    "scores": {
+      "D1_logic": {"score": null, "anchor": "..."},
+      "D2_accuracy": {"score": null, "anchor": "..."},
+      "D3_method": {"score": null, "anchor": "..."},
+      "D4_completeness": {"score": null, "anchor": "..."},
+      "D5_clarity": {"score": null, "anchor": "..."},
+      "D6_insight": {"score": null, "anchor": "..."}
+    },
+    "composite_score": null,
+    "na_dimensions": []
+  },
+  "step3_adversarial_challenge": {
+    "challenges": {
+      "A_alternative_explanations": "...",
+      "B_hidden_assumptions": "...",
+      "C_boundary_conditions": "...",
+      "D_counterexamples": "...",
+      "E_method_alternatives": "..."
+    },
+    "post_challenge_score_adjustments": []
+  },
+  "step4_final_judgment": {
+    "verdict": "KEEP|MINOR|MAJOR|DISCARD",
+    "composite_score": null,
+    "independence_declaration": {
+      "reviewer_backend": "...",
+      "author_backend": "...",
+      "axis1_different_backend": true,
+      "axis2_context_isolated": true,
+      "independence_level": "IND|SEMI|NON",
+      "degradation_notes": "...",
+      "session_id": "...",
+      "timestamp": "..."
+    },
+    "key_challenges_summary": [],
+    "rationale": "..."
+  },
+  "post_hoc_audit": {
+    "audit_items": {},
+    "audit_conclusion": "PASS|CONDITIONAL_PASS|FAIL",
+    "auditor": "..."
+  }
+}
+```
 
 ---
 

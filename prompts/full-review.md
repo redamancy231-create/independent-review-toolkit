@@ -17,7 +17,7 @@
 从材料中提取所有事实性声明。对每条声明标注：
 
 **置信层级**：
-- `[VERIFIED]` — 可被公开来源验证
+- `[VERIFIED]` — 可被公开来源验证（**每个 [VERIFIED] 须附验证来源：URL / 文件路径 / 工具名称**）
 - `[CONSISTENT]` — 与你自身知识一致
 - `[PLAUSIBLE]` — 逻辑自洽但无法验证
 - `[UNVERIFIABLE]` — 无法判断真伪
@@ -28,7 +28,7 @@
 - `[ASSUMPTION]` — 未声明的假设
 - `[VALUE]` — 价值判断
 
-如果你因工具限制无法验证某声明，标注 `[TOOL-LIMITED]`。
+如果你因工具限制无法验证某声明，标注 `[TOOL-LIMITED]` 而非降级为 CONSISTENT 或 UNVERIFIABLE。
 
 ---
 
@@ -85,10 +85,15 @@
 independence_declaration:
   reviewer_backend: "<你的模型名称>"
   author_backend: "<作者模型名称，如未知则标注 UNKNOWN>"
+  axis1_different_backend: true/false
+  axis2_context_isolated: true/false
   independence_level: "<IND | SEMI | NON>"
   degradation_notes: "<如有退化，说明原因>"
+  session_id: "<审查者会话标识>"
   timestamp: "<ISO 8601>"
 ```
+
+5. **双件输出**：除本 Markdown 报告外，同时输出一份结构化 JSON（字段与上述报告一一对应，格式参照 SOP §13.2）。
 
 ---
 

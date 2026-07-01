@@ -1,10 +1,12 @@
 # Independent Review Toolkit · 独立审查工具包
 
-> **English**: A battle-tested protocol for unbiased, multi-model review of AI-generated content. Born from 50+ real review rounds across 5 LLM backends. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and real annotated examples. **CC BY 4.0**.
+> **English**: A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends in the [AI Collaboration Framework](https://github.com/redamancy231-create/ai-collaboration-framework) project. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples. **CC BY 4.0**.
 
-**语言**：简体中文（核心文档） / English (abstract & prompts available)  
+**语言**：简体中文（核心文档） / English abstract available（英文摘要，核心文档和 prompt 模板为中文）  
 **来源**：提炼自 [AI协作项目全生命周期框架](https://github.com/redamancy231-create/ai-collaboration-framework) §9.2 + 50+ 轮实战审查  
-**成熟度**：经 5 种 LLM 后端 × 4 个 CLI house 验证，核心流程稳定
+**成熟度**：SOP 核心流程在源项目中经多后端验证；本工具包自身的提取/改编过程见下方验证状态
+
+> ⚠️ **验证状态**：本仓库 v2.0.0 初版由 **DeepSeek-V4-Pro 单后端**完成提取和改编。按自身 SOP §2.2 独立性判定标准，当前编辑独立性为 **[NON]**。已于 2026-07-01 触发 Codex GPT-5.5 异后端交叉审查（R1），审查报告见 `_reviews/`。待 R1 发现修复后触发 R2 重审闭合。
 
 ---
 
@@ -44,12 +46,18 @@
 | 只做对抗式挑战（压力测试） | [对抗式挑战 Prompt](prompts/adversarial.md) |
 | 想完整理解审查流程 | [完整 SOP](sop.md) |
 
-### 第三步：复制 prompt，开一个全新会话
+### 第三步：准备材料，开一个全新会话
 
+**准备阶段**（操作者完成）：
+1. 记录**作者后端**（哪个模型产出了被审材料）
+2. 记录被审材料的**版本标识**（git commit hash / 文件 hash / 版本号——至少一项）
+3. 准备或选用评分标准（可从 [完整审查 Prompt](prompts/full-review.md) 的 D1-D6 六维框架开始；如无特定 rubric，六维框架作为默认标准即可）
+
+**执行阶段**：
 1. 开一个**全新会话**（确认无历史上下文泄露）
-2. 只粘贴三样东西：**prompt + 被审查的材料 + 评分标准**
+2. 只粘贴：**prompt + 被审查的材料**（不附带作者自评、中间版本、结论倾向）
 3. 不要告诉审查者"这是谁写的""我觉得哪里有问题"
-4. 收集结果后，对照 [SOP §10 后置核验](sop.md) 验证审查质量
+4. 收集结果后，对照 [SOP §10 后置核验](sop.md) 验证审查质量和独立性
 
 ---
 
