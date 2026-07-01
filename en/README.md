@@ -50,6 +50,31 @@ Material: [paste here]
 
 ---
 
+```mermaid
+flowchart TB
+    SOURCE["📄 <b>Source Material</b><br/>Document / code / conclusion under review"]
+
+    subgraph FIREWALL["🔒 <b>Operator Firewall</b>"]
+        BARE["Bare Environment Setup<br/>C1-C10 Checklist<br/>Strip author self-assessments"]
+    end
+
+    SOURCE --> FIREWALL
+
+    subgraph PROCESS["<b>Four-Step Review Process</b>"]
+        direction LR
+        S1["<b>Step 1</b><br/>Fact Extraction<br/>──────<br/>L1-L4 Confidence<br/>Statement Classification"]
+        S2["<b>Step 2</b><br/>Independent Scoring<br/>──────<br/>D1-D6 Dimensions<br/>1-5 Scale"]
+        S3["<b>Step 3</b><br/>Adversarial Challenge<br/>──────<br/>A-E Five Angles<br/>Devil's Advocate"]
+        S4["<b>Step 4</b><br/>Final Judgment<br/>──────<br/>Keep / Minor<br/>Major / Discard"]
+        S1 --> S2 --> S3 --> S4
+    end
+
+    FIREWALL --> PROCESS
+
+    PROCESS --> OUTPUT["📋 <b>Dual-Format Output</b><br/>.md Report + .json Structured Data"]
+    OUTPUT --> AUDIT["✅ <b>Post-Hoc Audit</b><br/>A1-A9 Nine Audit Items"]
+```
+
 ## Get Started in 5 Minutes
 
 ### Step 1: Understand Independence
