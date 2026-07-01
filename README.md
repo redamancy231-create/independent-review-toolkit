@@ -50,6 +50,31 @@
 
 ---
 
+```mermaid
+flowchart TB
+    SOURCE["📄 <b>源材料</b><br/>被审查的文档/代码/结论"]
+    
+    subgraph FIREWALL["🔒 <b>操作者防火墙</b>"]
+        BARE["裸环境搭建<br/>C1-C10 Checklist<br/>剥离作者自评/推理"]
+    end
+    
+    SOURCE --> FIREWALL
+    
+    subgraph PROCESS["<b>四步审查流程</b>"]
+        direction LR
+        S1["<b>步骤一</b><br/>事实提取<br/>──────<br/>L1-L4 置信层级<br/>声明分类"]
+        S2["<b>步骤二</b><br/>独立评分<br/>──────<br/>D1-D6 六维<br/>1-5 分"]
+        S3["<b>步骤三</b><br/>对抗式挑战<br/>──────<br/>A-E 五方面<br/>魔鬼代言人"]
+        S4["<b>步骤四</b><br/>终判<br/>──────<br/>Keep / Minor<br/>Major / Discard"]
+        S1 --> S2 --> S3 --> S4
+    end
+    
+    FIREWALL --> PROCESS
+    
+    PROCESS --> OUTPUT["📋 <b>双件输出</b><br/>.md 报告 + .json 结构化"]
+    OUTPUT --> AUDIT["✅ <b>后置核验</b><br/>A1-A9 九项审计"]
+```
+
 ## 5 分钟上手
 
 ### 第一步：理解独立性
