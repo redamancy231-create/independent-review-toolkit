@@ -1,6 +1,8 @@
 # 完整独立审查 Prompt
 
-> 复制以下内容到全新 AI 会话中。**不要修改 prompt 的顺序和结构**——评分必须在挑战之前。
+> **适用场景**：方法论资产、正式交付物、重大决策——需要完整四步审查流程的场景。  
+> **不适用场景**：日常代码片段、非正式内容、只需快速压力测试——请使用 `adversarial.md`。  
+> **用法**：复制以下内容到全新 AI 会话中。**不要修改 prompt 的顺序和结构**——评分必须在挑战之前。
 
 ---
 
@@ -89,11 +91,23 @@ independence_declaration:
   axis2_context_isolated: true/false
   independence_level: "<IND | SEMI | NON>"
   degradation_notes: "<如有退化，说明原因>"
-  session_id: "<审查者会话标识>"
+  session_id: "<审查者会话标识，如无平台级 ID 则用模型名+开始时间>"
   timestamp: "<ISO 8601>"
 ```
 
-5. **双件输出**：除本 Markdown 报告外，同时输出一份结构化 JSON（字段与上述报告一一对应，格式参照 SOP §13.2）。
+5. **双件输出**：除本 Markdown 报告外，同时输出一份结构化 JSON。JSON 须包含以下字段（缺少则视为未完成）：
+
+```json
+{
+  "metadata": {"title": "...", "date": "...", "model": "<你的模型>", "sop_version": "v2.0"},
+  "source_material": {"title": "...", "author_backend": "...", "version_binding": "..."},
+  "step1_fact_extraction": [{"text": "...", "confidence": "VERIFIED|CONSISTENT|PLAUSIBLE|UNVERIFIABLE", "type": "FACT|INFERENCE|ASSUMPTION|VALUE"}],
+  "step2_scoring": {"D1_logic": 0, "D2_accuracy": 0, "D3_method": 0, "D4_completeness": 0, "D5_clarity": 0, "D6_insight": 0, "composite_score": 0},
+  "step3_adversarial_challenge": {"A": "...", "B": "...", "C": "...", "D": "...", "E": "..."},
+  "step4_final_judgment": {"verdict": "KEEP|MINOR|MAJOR|DISCARD", "composite_score": 0, "independence_declaration": {"reviewer_backend": "...", "author_backend": "...", "axis1_different_backend": true, "axis2_context_isolated": true, "independence_level": "IND|SEMI|NON", "degradation_notes": "...", "session_id": "...", "timestamp": "..."}},
+  "post_hoc_audit": {"items": {}, "conclusion": "PASS|CONDITIONAL_PASS|FAIL"}
+}
+```
 
 ---
 
