@@ -1,0 +1,2 @@
+# 本文档仓库的核心交付物是 Markdown——强制 linguist 检测
+*.md linguist-detectable
