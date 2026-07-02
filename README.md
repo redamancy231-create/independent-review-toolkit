@@ -156,6 +156,7 @@ independent-review-toolkit/
 |------|------|
 | [**AI协作项目全生命周期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **上游来源**——本工具包的 SOP 提炼自框架 §9.2 + 50+ 轮实战审查 |
 | [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同级工具**——两个案例实验均使用本工具包的独立审查 SOP 完成 17+ 轮异后端审查闭合 |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同级项目**——八阶段多模型学术生产流水线；Phase 5-6 的交叉双盲审是本工具包独立审查方法在完整学术场景中的实战应用 |
 
 ---
 
