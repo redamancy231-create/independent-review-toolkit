@@ -1,8 +1,8 @@
-# Independent Review Toolkit · Independent Review Toolkit
+# Independent Review Toolkit · 独立审查工具包
 
 > **English**: A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends in the [AI Collaboration Framework](https://github.com/redamancy231-create/ai-collaboration-framework) project. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples. **CC BY 4.0**.
 
-**Language**: Simplified Chinese (core documents) / English abstract available (English abstract; core documents and prompt templates are in Chinese)  
+**Language**: Simplified Chinese (original) · [English](en/README.md) · [Traditional Chinese](zh-Hant/README.md)  
 **Source**: Extracted from [AI Collaboration Project Full Lifecycle Framework](https://github.com/redamancy231-create/ai-collaboration-framework) Section 9.2 + 50+ field review rounds  
 **Maturity**: The SOP core workflow has been validated across multiple backends in the source project; see the verification status below for this toolkit's own extraction and adaptation process.
 
@@ -113,15 +113,15 @@ Independent review requires two conditions at the same time:
 
 ```
 independent-review-toolkit/
-|-- README.md                 -> You are here
-|-- LICENSE                   -> CC BY 4.0
-|-- sop.md                    -> Complete standard operating procedure for independent review
-|-- prompts/
-|   |-- full-review.md        -> Complete four-step review prompt (fact extraction -> scoring -> challenge -> final judgment)
-|   `-- adversarial.md        -> Prompt dedicated to adversarial challenge (devil's advocate mode)
-`-- examples/                  -> Teaching examples (reconstructed from real review findings, not verbatim transcripts)
-    |-- methodology-review.md  -> Review case demonstration (complete SOP four-step workflow + annotations)
-    `-- methodology-review.json -> Structured JSON companion for the same case
+├── README.md                 ← You are here
+├── LICENSE                   ← CC BY 4.0
+├── sop.md                    ← Complete standard operating procedure for independent review
+├── prompts/
+│   ├── full-review.md        ← Complete four-step review prompt (fact extraction → scoring → challenge → final judgment)
+│   └── adversarial.md        ← Prompt dedicated to adversarial challenge (devil's advocate mode)
+└── examples/                  ← Teaching examples (reconstructed from real review findings, not verbatim transcripts)
+    ├── methodology-review.md  ← Review case demonstration (complete SOP four-step workflow + annotations)
+    └── methodology-review.json ← Structured JSON companion for the same case
 ```
 
 ---
@@ -134,7 +134,7 @@ This toolkit's methodology comes from the following field accumulation:
 |------|------|
 | Total review rounds | 50+ |
 | LLM backends involved | 5 types (GPT-5.5 / DeepSeek-V4-Pro / Kimi-K2.7 / Qwen3.7-Max / GLM-5.2) |
-| CLI hosts | 4 (Codex / Claude / Kimi / Qwen) |
+| CLI house | 4 (Codex / Claude / Kimi / Qwen) |
 | Empirical complementarity | Same prompt, multiple backends -> blind-spot complementarity rate ~50% (validated across three backends) |
 | Review decay evidence | Identified and built in anti-decay constraints |
 
@@ -154,4 +154,4 @@ This toolkit's methodology comes from the following field accumulation:
 
 CC BY 4.0. Please cite the version number when referencing this work.
 
-*Generation model: DeepSeek-V4-Pro (via Claude Code CLI) · 2026-07-01*
+*English translation: GPT-5.5 (via Codex CLI) · 2026-07-01*

@@ -119,4 +119,4 @@ F1 作為單一指標：如果用精確匹配率（Exact Match）或人類評估
 *- prompt-tdd 專案 A1 實驗報告*  
 *- A1 7 輪審查鏈（Codex GPT-5.5 ×4 + Qwen qwen3.7-max ×3）*  
 *示例版本：v2.0.1（2026-07-01，Codex R1 審查後修正）*  
-*生成模型：DeepSeek-V4-Pro (via Claude Code CLI)*
+*正體中文：OpenCC 轉換 + GPT-5.5 (via Codex CLI) 潤色 · 2026-07-01*

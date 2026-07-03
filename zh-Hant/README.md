@@ -2,7 +2,7 @@
 
 > **English**: A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends in the [AI Collaboration Framework](https://github.com/redamancy231-create/ai-collaboration-framework) project. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples. **CC BY 4.0**.
 
-**語言**：簡體中文（核心文件） / English abstract available（英文摘要，核心文件和 prompt 模板為中文）  
+**語言**：簡體中文（原文） · [English](../en/README.md) · [正體中文](zh-Hant/README.md)  
 **來源**：提煉自 [AI協作專案全生命週期框架](https://github.com/redamancy231-create/ai-collaboration-framework) §9.2 + 50+ 輪實戰審查  
 **成熟度**：SOP 核心流程在源專案中經多後端驗證；本工具包自身的提取/改編過程見下方驗證狀態
 
@@ -50,6 +50,31 @@
 
 ---
 
+```mermaid
+flowchart TB
+    SOURCE["📄 <b>源材料</b><br/>被審查的文件/程式碼/結論"]
+    
+    subgraph FIREWALL["🔒 <b>操作者防火牆</b>"]
+        BARE["裸環境搭建<br/>C1-C10 Checklist<br/>剝離作者自評/推理"]
+    end
+    
+    SOURCE --> FIREWALL
+    
+    subgraph PROCESS["<b>四步審查流程</b>"]
+        direction LR
+        S1["<b>步驟一</b><br/>事實提取<br/>──────<br/>L1-L4 置信層級<br/>聲明分類"]
+        S2["<b>步驟二</b><br/>獨立評分<br/>──────<br/>D1-D6 六維<br/>1-5 分"]
+        S3["<b>步驟三</b><br/>對抗式挑戰<br/>──────<br/>A-E 五方面<br/>魔鬼代言人"]
+        S4["<b>步驟四</b><br/>終判<br/>──────<br/>Keep / Minor<br/>Major / Discard"]
+        S1 --> S2 --> S3 --> S4
+    end
+    
+    FIREWALL --> PROCESS
+    
+    PROCESS --> OUTPUT["📋 <b>雙件輸出</b><br/>.md 報告 + .json 結構化"]
+    OUTPUT --> AUDIT["✅ <b>後置核驗</b><br/>A1-A9 九項審計"]
+```
+
 ## 5 分鐘上手
 
 ### 第一步：理解獨立性
@@ -90,7 +115,7 @@
 independent-review-toolkit/
 ├── README.md                 ← 你在這裡
 ├── LICENSE                   ← CC BY 4.0
-├── sop.md                    ← 完整獨立審查標準操作程式
+├── sop.md                    ← 完整獨立審查標準操作程序
 ├── prompts/
 │   ├── full-review.md        ← 完整四步審查 prompt（事實提取→評分→挑戰→終判）
 │   └── adversarial.md        ← 對抗式挑戰專用 prompt（魔鬼代言人模式）
@@ -129,4 +154,4 @@ independent-review-toolkit/
 
 CC BY 4.0。引用請註明版本號。
 
-*生成模型：DeepSeek-V4-Pro (via Claude Code CLI) · 2026-07-01*
+*正體中文：OpenCC 轉換 + GPT-5.5 (via Codex CLI) 潤色 · 2026-07-01*

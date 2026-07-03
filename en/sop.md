@@ -436,4 +436,4 @@ Every independent review produces two files:
 ---
 
 *Source: extracted from AI Collaboration Project Full Lifecycle Framework v1.6.4 Section 9.2 + methodological-review-sop.md v1.0.4*  
-*Generation model: DeepSeek-V4-Pro (via Claude Code CLI) · 2026-07-01*
+*English translation: GPT-5.5 (via Codex CLI) · 2026-07-01*

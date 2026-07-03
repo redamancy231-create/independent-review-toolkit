@@ -119,4 +119,4 @@ Key lesson: **single-backend self-review cannot replace different-backend indepe
 *- prompt-tdd project A1 experiment report*  
 *- A1 7-round review chain (Codex GPT-5.5 x4 + Qwen qwen3.7-max x3)*  
 *Example version: v2.0.1 (2026-07-01, revised after Codex R1 review)*  
-*Generation model: DeepSeek-V4-Pro (via Claude Code CLI)*
+*English translation: GPT-5.5 (via Codex CLI) · 2026-07-01*

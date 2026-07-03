@@ -48,3 +48,5 @@ Finally, give an overall assessment:
 ## Material Under Review
 
 [Paste the material under review here]
+
+*English translation: GPT-5.5 (via Codex CLI) · 2026-07-01*
