@@ -13,11 +13,11 @@
 ## Next Steps
 
 - 写介绍文章 → P2 → 无依赖
-- 补 examples/methodology-review.json 的 en/zh-Hant 翻译版本 → P2 → 无依赖
+- ~~补 examples/methodology-review.json 的 en/zh-Hant 翻译版本~~ → ✅ 2026-07-03 已完成（DeepSeek-V4-Pro，基于 .md 翻译术语表）
 
 ## 会话备注（2026-07-03，DeepSeek-V4-Pro via Claude Code CLI）
 
-翻译校对闭合：zh-Hant/README.md 补回整段 Mermaid 流程图（HIGH），修复 OpenCC 一对多错误（操作程式→操作程序、定製→自訂），en/ 标题/语言切换行/目录树修复。provenance 脚注修正为 GPT-5.5。
+翻译校对闭合：zh-Hant/README.md 补回整段 Mermaid 流程图（HIGH），修复 OpenCC 一对多错误（操作程式→操作程序、定製→自訂），en/ 标题/语言切换行/目录树修复。provenance 脚注修正为 GPT-5.5。校对在 Kimi Code CLI 交互模式下完成（交互模式是 Kimi CLI 唯一稳定调用方式）。
 
 ## 会话备注（2026-07-01，DeepSeek-V4-Pro via Claude Code CLI）
 

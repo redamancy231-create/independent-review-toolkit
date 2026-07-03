@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "title": "審查案例：方法論實驗報告審查",
+    "version": "2.0.1",
+    "date": "2026-07-01",
+    "model": "DeepSeek-V4-Pro (via Claude Code CLI)",
+    "sop_version": "v2.0.0",
+    "note": "教學重構示例（pedagogical reconstruction），非逐字審查轉錄。見 .md 檔案版本繫結。",
+    "translation": {
+      "model": "DeepSeek-V4-Pro (via Claude Code CLI)",
+      "date": "2026-07-03",
+      "note": "正體中文：簡→繁轉換，以 zh-Hant/examples/methodology-review.md 為術語參考"
+    }
+  },
+  "source_material": {
+    "title": "AI協作專案全生命週期框架 §6.3.2 Flow-as-Node 巢狀工作流對照實驗",
+    "author_backend": "DeepSeek-V4-Pro",
+    "type": "methodology",
+    "version_binding": {
+      "version_id": "dcac073",
+      "binding_method": "git-commit",
+      "verified_at": "2026-06-22T00:00:00+08:00",
+      "repo": "github.com/redamancy231-create/ai-collaboration-framework"
+    }
+  },
+  "step1_fact_extraction": {
+    "declarations": [
+      {"text": "n=20/臂，GPT-5.5 temp=0", "confidence": "VERIFIED", "type": "FACT", "verification_source": "prompt-tdd 專案實驗配置檔案"},
+      {"text": "Δ median F1 = 0.000", "confidence": "CONSISTENT", "type": "FACT", "verification_source": null},
+      {"text": "3/5 類別天花板效應", "confidence": "CONSISTENT", "type": "INFERENCE", "verification_source": null},
+      {"text": "Tier 0 負證據", "confidence": "CONSISTENT", "type": "INFERENCE", "verification_source": null},
+      {"text": "ceiling-limited 定性", "confidence": "PLAUSIBLE", "type": "VALUE", "verification_source": null}
+    ]
+  },
+  "step2_scoring": {
+    "scores": {
+      "D1_logic": {"score": 4, "anchor": "A/B 臂定義清晰，對照邏輯正確；結論推理跳躍未充分橋接"},
+      "D2_accuracy": {"score": 4, "anchor": "統計報告與實驗配置一致；temp=0 和 n=4 事實準確但方法學後果未充分討論"},
+      "D3_method": {"score": 4, "anchor": "對照實驗是適當方法；F1 單一指標可能對結構性差異不敏感"},
+      "D4_completeness": {"score": 3, "anchor": "4 項缺失：temp=0 可推廣性／逐類樣本分佈／資訊量等價假設／precision-recall 拆分"},
+      "D5_clarity": {"score": 4, "anchor": "結構清晰，[E-] 證據標註使用恰當，術語定義明確"},
+      "D6_insight": {"score": 4, "anchor": "陰性結果誠實報告在提示工程文獻中稀缺，具有方法論價值"}
+    },
+    "composite_score": 3.8,
+    "na_dimensions": []
+  },
+  "step3_adversarial_challenge": {
+    "challenges": {
+      "A_alternative_explanations": "[MAJOR] 天花板效應可能源自 F1 粗粒度而非真無差異；建議補 precision/recall 拆分",
+      "B_hidden_assumptions": "[MAJOR] 隱含資訊量等價假設——層級化 vs 扁平描述的資訊量可能不等價",
+      "C_boundary_conditions": "[MODERATE] 推廣邊界不清晰——GPT-5.5 中文編碼任務內，是否適用其他模型／語言／temp>0？",
+      "D_counterexamples": "[MINOR] CoT 格式效應陽性報告是否構成反例？建議區分內容格式 vs 推理格式",
+      "E_method_alternatives": "[MODERATE] F1 單一指標——Exact Match 或人類評估作為替代指標是否一致？"
+    },
+    "post_challenge_score_adjustments": [
+      {"dimension": "D4_completeness", "from": 3, "to": 3, "reason": "挑戰 (A)(B)(E) 進一步確認缺失項，但不改變評分級別"},
+      {"dimension": "D3_method", "from": 4, "to": 4, "reason": "挑戰 (E) 指出單一指標侷限，但不否定方法本身"}
+    ]
+  },
+  "step4_final_judgment": {
+    "verdict": "MINOR",
+    "composite_score": 3.8,
+    "independence_declaration": {
+      "reviewer_backend": "GPT-5.5 (via Codex CLI)",
+      "author_backend": "DeepSeek-V4-Pro",
+      "axis1_different_backend": true,
+      "axis2_context_isolated": true,
+      "independence_level": "IND",
+      "degradation_notes": "審查者無法執行原始評分指令碼驗證 F1 值（標記 TOOL-LIMITED）",
+      "session_id": "A1-FlowAsNode-review-round-3",
+      "timestamp": "2026-06-21T23:30:00+08:00"
+    },
+    "key_challenges_summary": [
+      "(B) 資訊量等價假設——最需要補充的方法學討論",
+      "(A) F1 粗粒度假說——建議補充 precision/recall 拆分",
+      "(C) 推廣邊界——需更清晰的限制宣告"
+    ],
+    "rationale": "材料在實驗設計、方法選擇、表達品質和誠實報告方面合格。4 項完整性改進空間均不改變核心結論方向（ΔF1=0.000）。Minor 而非 Major——核心發現可信，改進是增強性的。"
+  },
+  "post_hoc_audit": {
+    "audit_items": {
+      "A1_backend": true,
+      "A2_isolation": true,
+      "A3_score_before_challenge": true,
+      "A4_challenge_no_softening": true,
+      "A5_provenance_complete": true,
+      "A6_declaration_embedded": true,
+      "A7_adjustment_documented": true,
+      "A8_na_reasoned": true,
+      "A9_version_binding": true
+    },
+    "audit_conclusion": "PASS",
+    "auditor": "DeepSeek-V4-Pro（教學示例自審——實際審查須異後端執行）"
+  }
+}
