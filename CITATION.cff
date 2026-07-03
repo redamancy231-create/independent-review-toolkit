@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this toolkit in your academic work, please cite it as follows."
+title: "Independent Review Toolkit"
+authors:
+  - family-names: "Acerolaorion"
+type: software
+abstract: "A field-tested protocol for multi-model review of AI-generated content."
+keywords:
+  - "independent review"
+  - "multi-model review"
+  - "prompt engineering"
+  - "methodology"
+  - "LLM"
+license: CC-BY-4.0
+version: 2.0.2
+date-released: "2026-07-01"
+repository-code: "https://github.com/redamancy231-create/independent-review-toolkit"
+url: "https://github.com/redamancy231-create/independent-review-toolkit"
