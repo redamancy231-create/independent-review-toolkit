@@ -1,12 +1,12 @@
 ## 项目状态: independent-review-toolkit
 
-- 当前阶段: v2.0.2（已发布，经 3 轮异后端审查闭合）
+- 当前阶段: v2.0.2（GitHub 页面全面优化，经 3 轮异后端审查闭合）
 - 本轮完成:
-  1. 从 AI 协作框架 v1.6.4 提取独立审查 SOP 为独立仓库
-  2. Codex GPT-5.5 R1(Major,16项)→修复→R2(PASS)
-  3. Qwen3-Max R1(Major,3MAJOR+7MODERATE)→修复→闭合
-  4. 三语言翻译（en + zh-Hant，Codex GPT-5.5）
-  5. Mermaid 四步审查流程图 + 交叉链接三个仓库
+  1. GitHub 页面全面优化（Topics 12/Discussions 启用/Description 双语+去营销感/LICENSE 完整法律文本/CITATION.cff 创建+name修正）
+  2. Release v2.0.2 创建（结构化中英双语 notes + Related Projects）
+  3. CONTRIBUTING.md + 2 Issue Forms
+  4. Social Preview 自定义图片（1280×640，四步审查流程 Mermaid 图）
+  5. Codex GPT-5.5 独立审查→措辞建议全部采纳（battle-tested→field-tested, unbiased→bias-resistant）
 - 发现的问题: 无
 
 ## Next Steps
