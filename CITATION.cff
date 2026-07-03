@@ -1,14 +1,15 @@
 cff-version: 1.2.0
 message: "If you use this toolkit in your academic work, please cite it as follows."
-title: "Independent Review Toolkit"
+title: "Independent Review Toolkit · 独立审查工具包"
 authors:
-  - family-names: "Acerolaorion"
+  - name: "Acerolaorion"
 type: software
-abstract: "A field-tested protocol for multi-model review of AI-generated content."
+abstract: "A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends. Includes SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples."
 keywords:
   - "independent review"
   - "multi-model review"
   - "prompt engineering"
+  - "quality assurance"
   - "methodology"
   - "LLM"
 license: CC-BY-4.0
