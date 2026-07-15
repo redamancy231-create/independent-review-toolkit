@@ -1,10 +1,18 @@
 # Independent Review Toolkit · 独立审查工具包
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 > **English**: A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends in the [AI Collaboration Framework](https://github.com/redamancy231-create/ai-collaboration-framework) project. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples. **CC BY 4.0**.
+
+[![简体中文](https://img.shields.io/badge/lang-简体中文-red)](../README.md)
+[![English](https://img.shields.io/badge/lang-English-blue)]()
+[![正體中文](https://img.shields.io/badge/lang-正體中文-green)](../zh-Hant/README.md)
 
 **Language**: Simplified Chinese (original) · [English](en/README.md) · [Traditional Chinese](zh-Hant/README.md)  
 **Source**: Extracted from [AI Collaboration Project Full Lifecycle Framework](https://github.com/redamancy231-create/ai-collaboration-framework) Section 9.2 + 50+ field review rounds  
 **Maturity**: The SOP core workflow has been validated across multiple backends in the source project; see the verification status below for this toolkit's own extraction and adaptation process.
+
+> ⚡ Copy prompt → paste into new AI session → replace [material] → 5 minutes to your first independent review | 50+ rounds · 5 backends · 4-step process
 
 > WARNING **Verification status**: The initial v2.0.1 version of this repository was extracted and adapted by a **single backend, DeepSeek-V4-Pro**. It has passed a closed independent review chain using the different backend Codex GPT-5.5:
 > - **R1** (2026-07-01): final judgment Major, found 16 items (CRITICAL x3, MAJOR x10, MODERATE x2, MINOR x1) -> all fixed
@@ -147,6 +155,17 @@ This toolkit's methodology comes from the following field accumulation:
 | **This toolkit** | After the fact (after output) | "How good is it?" - complete review + adversarial challenge |
 | kill-test-first | Before the fact (before starting work) | "Should this be done?" - veto-style pre-review |
 | Code Review (automated) | Before/after | Code correctness/style |
+
+## Related Projects
+
+| Project | Relationship |
+|------|------|
+| [**AI Collaboration Framework**](https://github.com/redamancy231-create/ai-collaboration-framework) | **Upstream source** — The SOP in this toolkit is distilled from §9.2 of the framework + 50+ rounds of practical review |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **Sibling tool** — Both case experiments used this toolkit's independent review SOP across 17+ rounds of cross-backend review |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **Sibling project** — Eight-stage multi-model academic production pipeline; Phase 5-6 cross double-blind review is a real-world application of this toolkit's review methodology |
+| [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **Sibling project** — pybind11/C++20 accelerated quantitative strategy refactoring; used this toolkit's SOP across 4 rounds of Kimi + GPT-5.5 cross-backend review |
+| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **Sibling project** — Markdown → Chinese DOCX pipeline; closed after 3 rounds of GPT-5.6-Sol cross-backend independent review |
+| [**Claude Skills**](https://github.com/redamancy231-create/claude-skills) | **Sibling project** — 3 battle-tested Claude Code Skills extracted from framework §9.2–§9.3, independently verified by 3 backends |
 
 ---
 

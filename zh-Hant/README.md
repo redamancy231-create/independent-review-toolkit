@@ -1,10 +1,18 @@
 # Independent Review Toolkit · 獨立審查工具包
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 > **English**: A field-tested protocol for multi-model review of AI-generated content. Derived from 50+ review rounds across 5 LLM backends in the [AI Collaboration Framework](https://github.com/redamancy231-create/ai-collaboration-framework) project. Includes a step-by-step SOP, copy-paste prompt templates, adversarial challenge framework, and annotated examples. **CC BY 4.0**.
+
+[![简体中文](https://img.shields.io/badge/lang-简体中文-red)](../README.md)
+[![English](https://img.shields.io/badge/lang-English-blue)](../en/README.md)
+[![正體中文](https://img.shields.io/badge/lang-正體中文-green)]()
 
 **語言**：簡體中文（原文） · [English](../en/README.md) · [正體中文](zh-Hant/README.md)  
 **來源**：提煉自 [AI協作專案全生命週期框架](https://github.com/redamancy231-create/ai-collaboration-framework) §9.2 + 50+ 輪實戰審查  
 **成熟度**：SOP 核心流程在源專案中經多後端驗證；本工具包自身的提取/改編過程見下方驗證狀態
+
+> ⚡ 複製 prompt → 貼上到新 AI 會話 → 替換[材料] → 5分鐘啟動第一次獨立審查 | 50+輪 · 5種後端 · 4步流程
 
 > ⚠️ **驗證狀態**：本倉庫 v2.0.1 初版由 **DeepSeek-V4-Pro 單後端**完成提取和改編。已通過 Codex GPT-5.5 異後端獨立審查鏈閉合：
 > - **R1**（2026-07-01）：終判 Major，發現 16 項（CRITICAL×3, MAJOR×10, MODERATE×2, MINOR×1）→ 全部修復
@@ -147,6 +155,17 @@ independent-review-toolkit/
 | **本工具包** | 事後（產出後） | "做得好不好"——完整審查 + 對抗挑戰 |
 | kill-test-first | 事前（動手前） | "該不該做"——否決式預審 |
 | Code Review (自動化) | 事前/事後 | 程式碼正確性/風格 |
+
+## 相關專案
+
+| 專案 | 關係 |
+|------|------|
+| [**AI協作專案全生命週期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **上游來源**——本工具包的 SOP 提煉自框架 §9.2 + 50+ 輪實戰審查 |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同級工具**——兩個案例實驗均使用本工具包的獨立審查 SOP 完成 17+ 輪異後端審查閉合 |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同級專案**——八階段多模型學術生產流水線；Phase 5-6 的交叉雙盲審是本工具包獨立審查方法在完整學術場景中的實戰應用 |
+| [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同級專案**——pybind11/C++20 加速的量化策略重構；使用本工具包的 SOP 完成 Kimi + GPT-5.5 四輪異後端獨立審查 |
+| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同級專案**——Markdown → 中文 DOCX 泛化管道；經 3 輪 GPT-5.6-Sol 異後端獨立審查閉合 |
+| [**Claude Skills**](https://github.com/redamancy231-create/claude-skills) | **同級專案**——3 個實戰驗證的 Claude Code Skill；從框架 §9.2–§9.3 提取，經 3 後端獨立驗證閉合 |
 
 ---
 
