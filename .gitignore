@@ -12,3 +12,4 @@ __pycache__/
 
 # Internal review artifacts (not for release)
 _reviews/
+project_status.md
